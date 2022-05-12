@@ -1,14 +1,5 @@
 const fs = require("fs");
 
-// Check if the file is created
-
-const fileExists = async (fileName) => {
-  const fileOk = fs.existsSync(fileName);
-
-  if (fileOk === false) {
-    await fs.promises.writeFileSync(fileName, "");
-  }
-};
 
 // Creates the Class
 let productId = 0;
@@ -18,6 +9,16 @@ class Contenedor {
   constructor(fileName) {
     this.fileName = fileName;
   }
+
+  // Check if the file is created
+
+  fileExists = async (fileName) => {
+    const fileOk = fs.existsSync(fileName);
+
+    if (fileOk === false) {
+      await fs.promises.writeFileSync(fileName, "");
+    }
+  };
 
   async save(product) {
     try {
@@ -98,3 +99,5 @@ const getProductById = async (id) => {
 // addProduct();
 // deleteAllProducts()
 getProductById(1)
+
+module.exports = Contenedor

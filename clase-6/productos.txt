@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Lapicera",
+    "price": 18.50,
+    "thumbnail": "http://"
+  },
+  {
+    "id": 2,
+    "title": "Cuaderno",
+    "price": 98.20,
+    "thumbnail": "http://"
+  },
+  {
+    "id": 3,
+    "title": "Resaltador",
+    "price": 29.90,
+    "thumbnail": "http://"
+  }
+]
