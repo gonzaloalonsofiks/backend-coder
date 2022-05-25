@@ -9,22 +9,21 @@ const productos = new Contenedor();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 // GET /api/productos --> devuelve todos los productos
 
 routerProductos.get("/", (req, res) => {
-    res.send(productos.getProductos());
+  res.send(productos.getProductos());
 });
 
 // GET /api/productos/:id --> devuelve productos según el ID
 
 routerProductos.get("/:idProducto", (req, res) => {
   const id = req.params.idProducto;
-  if(productos.getProductoPorId(id) !== undefined) {
+  if (productos.getProductoPorId(id) !== undefined) {
     res.send(productos.getProductoPorId(id));
-
-  }
-  else res.status(404).send({Error: 'El producto no existe'});
+  } else res.status(404).send({ Error: "El producto no existe" });
 });
 // POST /api/productos/:id --> recibe y agrega productos creando el ID
 
