@@ -1,21 +1,30 @@
 const express = require("express");
-const app = express();
-const { Router } = express;
-const Contenedor = require("../../clase-8/desafio/container.js");
-const PORT = 8080;
-const routerProductos = Router();
 
-const handlebars = require("express-handlebars");
+const app = express();
+const PORT = 8080;
+
+const { Router } = express;
+const { engine } = require("express-handlebars");
+
+const Contenedor = require("../../clase-8/desafio/container.js");
+const routerProductos = Router();
 
 const productos = new Contenedor();
 
+app.engine(
+  "hbs",
+  engine({
+    extname: ".hbs",
+    defaultLayout: "index.hbs",
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
-
-app.engine("hbs", )
-app.set("views", "../hbs_views");
 app.set("view engine", "hbs");
+app.set("views", "./hbs_views");
+
+app.use(express.static("public"));
 
 // GET /api/productos --> devuelve todos los productos
 
