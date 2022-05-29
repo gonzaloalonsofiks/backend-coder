@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width={device-width}, initial-scale=1.0" />
+    <title>Inventario de productos</title>
+  </head>
+  <body>
+    <h1 align="center">Productos disponibles</h1>
+    <p align="center">Estos son los productos que tenemos disponibles en
+      inventario</p>
+
+    {{#if productos}}
+
+      <table
+        width="800px"
+        cellspacing="1"
+        cellpadding="4"
+        border="1"
+        align="center"
+      >
+        <thead>
+          <th>Imagen</th>
+          <th>Nombre del producto</th>
+          <th>Precio</th>
+        </thead>
+        <tbody>
+          {{#each productos}}
+            <tr>
+              <td><img src={{thumbnail}} alt="{{title}}" height="32px" /></td>
+              <td>{{title}}</td>
+              <td>{{price}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+    {{else}}
+      <div align="center">
+        <img
+          height="75px"
+          src="https://cdn-icons-png.flaticon.com/512/869/869078.png"
+          alt="Inventario vacío"
+        />
+        <h3 align="center">No hay productos disponibles en este momento</h3>
+      </div>
+    {{/if}}
+  </body>
+</html>

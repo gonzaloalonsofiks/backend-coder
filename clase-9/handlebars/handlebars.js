@@ -1,16 +1,17 @@
 const express = require("express");
-const {engine} = require("express-handlebars");
+const { engine } = require("express-handlebars");
 const app = express();
 
 // const {engine} = require("express-handlebars");
 port = 8081;
 
-app.engine('hbs',
-engine({
-  extname: '.hbs',
-  defaultLayout: 'index.hbs',
-
-}))
+app.engine(
+  "hbs",
+  engine({
+    extname: ".hbs",
+    defaultLayout: "index.hbs"
+  })
+);
 
 app.set("views", "./hbs_views");
 app.set("view engine", "hbs");
