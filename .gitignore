@@ -1,7 +1,1 @@
-clase-7/.gitignore
-clase-7/endpoints.js
-clase-7/index.js
-clase-7/package-lock.json
-clase-7/package.json
-clase-9/index.html
-clase-9/package.json
+node_modules
