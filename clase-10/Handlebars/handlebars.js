@@ -36,12 +36,12 @@ app.set('view engine', "hbs")
 app.use('/productos', router) //Esto lo agregué porque vi que otros lo tenían pero no entiendo por qué hay que agregarlo
 
 router.get('/', (req, res) => {
-  res.render('index', productos);
+  res.render('main', productos);
 })
 
 router.post('/', (req, res) => {
   res.send(productos.postProducto(req.body))
-  res.render('/productos')
+  res.send('/')
 })
 
 app.use("api/productos", router);

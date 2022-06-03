@@ -1,0 +1,12 @@
+html
+  head
+    title="Pug"
+  body
+    h1="Ingreso de productos"
+    p="Para ingresar el producto, por favor, completá el formulario."
+
+    form(action="/productos" method="POST")
+      input(type="text", name="title" placeholder="Nombre del producto" required)
+      input(type="number", name="price" placeholder="Precio" required step="0.01")
+      input(type="url", name="thumbnail" placeholder="URL de la imagen" required)
+      input(type="submit", value="Agregar producto")

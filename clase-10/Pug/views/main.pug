@@ -1,0 +1,24 @@
+html
+  head
+    title="Productos Pug"
+  body
+    h1="Productos cargados"
+    p="Estos son los productos que tenemos en inventario"
+
+    if productos.length > 0
+      table(style="width: 800px", border='1')
+      thead
+        tr
+          th Imagen
+          th Producto
+          th Precio
+      tbody
+        each producto in Productos
+          tr
+            td
+              img(src="producto.thumbnail" height="32px")
+            td=producto.title
+            td=producto.price
+    else
+      img(src="https://cdn-icons-png.flaticon.com/512/869/869078.png" height='64px')
+      h3="Inventario vacío"
